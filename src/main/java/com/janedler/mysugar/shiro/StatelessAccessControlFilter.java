@@ -43,7 +43,7 @@ public class StatelessAccessControlFilter extends AccessControlFilter {
     protected boolean onAccessDenied(ServletRequest request, ServletResponse response) throws Exception {
         HttpServletRequest req = (HttpServletRequest) request;
         String url = req.getRequestURI();
-        if (url.equals("/tUser/api/login") || url.equals("/tUser/api/register") || url.equals("/") || url.contains("/resources/")|| url.contains("/static/")) {
+        if (url.equals("/tUser/api/login") || url.equals("/tUser/api/register") || url.equals("/") || url.contains("/resources/")|| url.contains("/static/")|| url.contains("swagger") || url.contains("api-docs")) {
             return true;
         }
         String jwt = req.getHeader("Authorization");

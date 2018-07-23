@@ -35,6 +35,7 @@ public class SecurityUtil {
     }
 
     public static String decodePassword(String password, String key) {
-        return Base64Util.getFromBase64(XORUtil.getInstance().decode(password, key));
+        return password;
+        //return Base64Util.getFromBase64(XORUtil.getInstance().decode(password, key));
     }
 }

@@ -43,17 +43,22 @@ public class StatelessAccessControlFilter extends AccessControlFilter {
     protected boolean onAccessDenied(ServletRequest request, ServletResponse response) throws Exception {
         HttpServletRequest req = (HttpServletRequest) request;
         String url = req.getRequestURI();
-        if (url.equals("/tUser/api/login") || url.equals("/tUser/api/register") || url.equals("/") || url.contains("/resources/")|| url.contains("/static/")|| url.contains("swagger") || url.contains("api-docs")) {
+        if (url.equals("/tUser/api/login")
+                || url.equals("/tUser/api/register")
+                || url.equals("/auth/login")
+                || url.equals("/")
+                || url.contains("/resources/")
+                || url.contains("/static/")
+                || url.contains("swagger")
+                || url.contains("api-docs")) {
             return true;
         }
         String jwt = req.getHeader("Authorization");
-        String macAddress = req.getHeader("MacAddress");
-        logger.info("request>> url:"+url+"    "+"Authorization:"+ jwt+"   "+"MacAddress:"+macAddress);
-        if (ValidateUtil.isNullOrEmpty(macAddress) || ValidateUtil.isNullOrEmpty(jwt)) {
+        if (ValidateUtil.isNullOrEmpty(jwt)) {
             onLoginFail(response);
             return false;
         }
-        StatelessAuthenticationToken token = new StatelessAuthenticationToken(macAddress,jwt);
+        StatelessAuthenticationToken token = new StatelessAuthenticationToken(jwt);
         try {
             //5、委托给Realm进行登录
             getSubject(request, response).login(token);

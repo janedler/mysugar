@@ -14,13 +14,11 @@ import org.apache.shiro.authc.AuthenticationToken;
 public class StatelessAuthenticationToken implements AuthenticationToken {
     private static final long serialVersionUID = 1L;
     private long uid;
-    private String macAddress;
     private boolean rememberMe;
     private String token;
 
-    public StatelessAuthenticationToken(String macAddress,String token) {
+    public StatelessAuthenticationToken(String token) {
         super();
-        this.macAddress = macAddress;
         this.token = token;
     }
 
@@ -59,11 +57,4 @@ public class StatelessAuthenticationToken implements AuthenticationToken {
         this.token = token;
     }
 
-    public String getMacAddress() {
-        return macAddress;
-    }
-
-    public void setMacAddress(String macAddress) {
-        this.macAddress = macAddress;
-    }
 }

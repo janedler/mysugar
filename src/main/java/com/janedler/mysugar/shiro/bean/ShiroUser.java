@@ -21,11 +21,6 @@ public class ShiroUser implements Serializable {
     private long uId;
 
     /**
-     * mac地址
-     */
-    private String macAddress;
-
-    /**
      * jwt凭证
      */
     private String jwt;
@@ -38,9 +33,8 @@ public class ShiroUser implements Serializable {
     public ShiroUser() {
     }
 
-    public ShiroUser(long id, String macAddress, String jwt) {
+    public ShiroUser(long id,String jwt) {
         this.uId = id;
-        this.macAddress = macAddress;
         this.jwt = jwt;
     }
 
@@ -72,11 +66,4 @@ public class ShiroUser implements Serializable {
         this.jwt = jwt;
     }
 
-    public String getMacAddress() {
-        return macAddress;
-    }
-
-    public void setMacAddress(String macAddress) {
-        this.macAddress = macAddress;
-    }
 }

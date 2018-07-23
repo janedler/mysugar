@@ -62,8 +62,6 @@ public class StatelessAuthorizingRealm extends AuthorizingRealm {
     @Override
     protected AuthenticationInfo doGetAuthenticationInfo(AuthenticationToken token) {
 
-        logger.info("doGetAuthenticationInfo");
-
         StatelessAuthenticationToken statelessToken = (StatelessAuthenticationToken) token;
         String jwt = statelessToken.getToken();
         Claims claims = new JsonWebTokenUtil(jwtKey).parseJWT(jwt);
@@ -74,16 +72,11 @@ public class StatelessAuthorizingRealm extends AuthorizingRealm {
         }
         ShiroUser shiroUser = getAuthInfo(jwt);
         if (!ValidateUtil.isNullOrEmpty(shiroUser)) {
-            if (!statelessToken.getMacAddress().equals(shiroUser.getMacAddress())){
-                redisUtil.del(REDIS_KEY+"auth_info:"+jwt);
-                redisUtil.del(REDIS_KEY+"auth_permission:"+jwt);
-                throw new AuthorizationException("login overtime");
-            }
             return new SimpleAuthenticationInfo(getAuthInfo(jwt), jwt, getName());
         }
         TUser user = userService.selectById(statelessToken.getUid());
         if (!ValidateUtil.isNullOrEmpty(user)) {
-            ShiroUser shiroUserTmp = new ShiroUser(user.getId(), user.getUsername(), jwt);
+            ShiroUser shiroUserTmp = new ShiroUser(user.getId(),jwt);
             shiroUserTmp.setUser(user);
             setAuthInfo(shiroUserTmp, jwt);
             // 这里可以缓存认证

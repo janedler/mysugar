@@ -81,7 +81,7 @@ public class TUserController {
         userService.insert(tUser);
 
         TUser dbUser = userService.getUserByUserName(userNameRep);
-        ShiroUser shiroUser = new ShiroUser(dbUser.getId(), macAddress, jwt);
+        ShiroUser shiroUser = new ShiroUser(dbUser.getId(), jwt);
         shiroUser.setUser(dbUser);
         redisUtil.set(REDIS_KEY+"auth_info:"+jwt, JSONObject.toJSONString(shiroUser));
         ResultResp resultResp = new ResultResp();
@@ -108,7 +108,7 @@ public class TUserController {
         }
         String jwt = new JsonWebTokenUtil(jwtKey).getJWTString(userNameRep + passwordRep, 43200);
         logger.info("jwt>> " + jwt);
-        ShiroUser shiroUser = new ShiroUser(dbUser.getId(), macAddress, jwt);
+        ShiroUser shiroUser = new ShiroUser(dbUser.getId(), jwt);
         shiroUser.setUser(dbUser);
         redisUtil.set(REDIS_KEY+"auth_info:"+jwt, JSONObject.toJSONString(shiroUser));
         return shiroUser;

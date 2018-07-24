@@ -11,7 +11,7 @@ import java.io.Serializable;
  * </p>
  *
  * @author Janedler
- * @since 2018-07-12
+ * @since 2018-07-23
  */
 @TableName("t_user")
 public class TUser extends Model<TUser> {
@@ -20,9 +20,9 @@ public class TUser extends Model<TUser> {
 
     @TableId(value = "id", type = IdType.AUTO)
     private Integer id;
-    private String sex;
-    private String address;
-    private String name;
+    private String password;
+    private String username;
+    private String permission;
 
 
     public Integer getId() {
@@ -33,28 +33,28 @@ public class TUser extends Model<TUser> {
         this.id = id;
     }
 
-    public String getSex() {
-        return sex;
+    public String getPassword() {
+        return password;
     }
 
-    public void setSex(String sex) {
-        this.sex = sex;
+    public void setPassword(String password) {
+        this.password = password;
     }
 
-    public String getAddress() {
-        return address;
+    public String getUsername() {
+        return username;
     }
 
-    public void setAddress(String address) {
-        this.address = address;
+    public void setUsername(String username) {
+        this.username = username;
     }
 
-    public String getName() {
-        return name;
+    public String getPermission() {
+        return permission;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setPermission(String permission) {
+        this.permission = permission;
     }
 
     @Override
@@ -66,9 +66,9 @@ public class TUser extends Model<TUser> {
     public String toString() {
         return "TUser{" +
         "id=" + id +
-        ", sex=" + sex +
-        ", address=" + address +
-        ", name=" + name +
+        ", password=" + password +
+        ", username=" + username +
+        ", permission=" + permission +
         "}";
     }
 }

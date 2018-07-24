@@ -4,9 +4,8 @@ import com.janedler.mysugar.entity.TUser;
 import com.janedler.mysugar.service.TUserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
+import java.util.Base64;
 
 import java.util.List;
 
@@ -31,15 +30,32 @@ public class TUserController {
         return userService.selectList(null);
     }
 
-    @GetMapping("/api/insertUser")
+    @RequestMapping(value = "/api/insertUser/{permission}", method = RequestMethod.GET)
     @ResponseBody
-    public String insertUser() {
+    public TUser insertUser(@PathVariable String permission) throws Exception {
+        /*Base64.Decoder decoder = Base64.getDecoder();
+        Base64.Encoder encoder = Base64.getEncoder();
+        String text = permission;
+        byte[] textByte = text.getBytes("UTF-8");
+        String encodedText = encoder.encodeToString(textByte);
         TUser user = new TUser();
-        user.setName("Hello");
-        user.setSex("男");
-        user.setAddress("浦东新区");
+        user.setPermission(encodedText);
+        user.setUsername("lijian");
+        user.setPassword("123");
         userService.insert(user);
-        return "OK";
+        TUser userTmp = userService.selectList(null).get(0);
+        TUser resultUser = new TUser();
+        resultUser.setPassword(userTmp.getPassword());
+        resultUser.setId(userTmp.getId());
+        resultUser.setUsername(userTmp.getUsername());
+        resultUser.setPermission(new String(decoder.decode(userTmp.getPermission()), "UTF-8"));
+        return resultUser;*/
+        TUser user = new TUser();
+        user.setPermission(permission);
+        user.setUsername("lijian");
+        user.setPassword("123");
+        userService.insert(user);
+        return userService.selectList(null).get(0);
     }
 
 }

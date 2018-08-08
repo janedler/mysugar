@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.janedler.mysugar.multipleDataSource.ly.mapper.TbFriendRelationMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.janedler.mysugar.multipleDataSource.ly.entity.TbFriendRelation">
+        <id column="uid" property="uid" />
+        <result column="friend_uid" property="friendUid" />
+        <result column="approved" property="approved" />
+        <result column="create_time" property="createTime" />
+    </resultMap>
+
+</mapper>

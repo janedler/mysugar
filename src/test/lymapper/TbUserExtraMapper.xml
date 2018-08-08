@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.janedler.mysugar.multipleDataSource.ly.mapper.TbUserExtraMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.janedler.mysugar.multipleDataSource.ly.entity.TbUserExtra">
+        <id column="id" property="id" />
+        <result column="uid" property="uid" />
+        <result column="height" property="height" />
+        <result column="weight" property="weight" />
+        <result column="education" property="education" />
+        <result column="personality" property="personality" />
+        <result column="marriage" property="marriage" />
+        <result column="career" property="career" />
+        <result column="birthPlace" property="birthPlace" />
+        <result column="currentLocation" property="currentLocation" />
+        <result column="lastModTime" property="lastModTime" />
+    </resultMap>
+
+</mapper>

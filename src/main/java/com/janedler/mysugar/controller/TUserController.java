@@ -1,5 +1,8 @@
 package com.janedler.mysugar.controller;
 
+import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
+import com.baomidou.mybatisplus.core.metadata.IPage;
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.janedler.mysugar.entity.TUser;
 import com.janedler.mysugar.service.TUserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -8,6 +11,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.Base64;
 
 import java.util.List;
+import java.util.UUID;
 
 /**
  * <p>
@@ -27,7 +31,17 @@ public class TUserController {
     @GetMapping("/api/findAllUser")
     @ResponseBody
     public List<TUser> findAllUser() {
+
         return userService.selectList(null);
+    }
+
+
+    @GetMapping("/api/findAllUser/{currentPage}")
+    @ResponseBody
+    public List<TUser> findAllUserByPage(@PathVariable int currentPage) {
+
+       IPage<TUser> iPage = userService.selectPage(new Page<>(currentPage,8),new QueryWrapper<>());
+        return iPage.getRecords();
     }
 
     @RequestMapping(value = "/api/insertUser/{permission}", method = RequestMethod.GET)
@@ -52,7 +66,7 @@ public class TUserController {
         return resultUser;*/
         TUser user = new TUser();
         user.setPermission(permission);
-        user.setUsername("lijian");
+        user.setUsername(UUID.randomUUID().toString());
         user.setPassword("123");
         userService.insert(user);
         return userService.selectList(null).get(0);

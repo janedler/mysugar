@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.janedler.mysugar.multipleDataSource.ly.mapper.TbUserIdCardMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.janedler.mysugar.multipleDataSource.ly.entity.TbUserIdCard">
+        <id column="id" property="id" />
+        <result column="uid" property="uid" />
+        <result column="idCardType" property="idCardType" />
+        <result column="idCardNumber" property="idCardNumber" />
+        <result column="realName" property="realName" />
+        <result column="frontUrl" property="frontUrl" />
+        <result column="behindUrl" property="behindUrl" />
+        <result column="authStatus" property="authStatus" />
+        <result column="createTime" property="createTime" />
+    </resultMap>
+
+</mapper>

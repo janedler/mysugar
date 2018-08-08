@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.janedler.mysugar.multipleDataSource.ly.mapper.TbUserSkillsMapMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.janedler.mysugar.multipleDataSource.ly.entity.TbUserSkillsMap">
+        <id column="uid" property="uid" />
+        <result column="skill_id" property="skillId" />
+        <result column="skill_url" property="skillUrl" />
+        <result column="skill_name" property="skillName" />
+        <result column="state" property="state" />
+        <result column="description" property="description" />
+        <result column="failure_cause" property="failureCause" />
+        <result column="enable" property="enable" />
+        <result column="service_time" property="serviceTime" />
+        <result column="skill_extra_url" property="skillExtraUrl" />
+        <result column="online_voice" property="onlineVoice" />
+        <result column="online_video" property="onlineVideo" />
+        <result column="home_serv" property="homeServ" />
+        <result column="to_home_serv" property="toHomeServ" />
+        <result column="create_time" property="createTime" />
+    </resultMap>
+
+</mapper>

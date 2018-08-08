@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.janedler.mysugar.multipleDataSource.ly.mapper.TbMoneyAccountMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.janedler.mysugar.multipleDataSource.ly.entity.TbMoneyAccount">
+        <id column="uid" property="uid" />
+        <result column="ly_score" property="lyScore" />
+        <result column="money" property="money" />
+        <result column="trade_password" property="tradePassword" />
+        <result column="card_number" property="cardNumber" />
+        <result column="real_name" property="realName" />
+        <result column="phone" property="phone" />
+        <result column="verified" property="verified" />
+        <result column="bind_timestamp" property="bindTimestamp" />
+    </resultMap>
+
+</mapper>

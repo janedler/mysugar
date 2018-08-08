@@ -2,10 +2,6 @@ package com.janedler.mysugar.config;
 
 import com.baomidou.mybatisplus.core.parser.ISqlParser;
 import com.baomidou.mybatisplus.extension.plugins.PaginationInterceptor;
-import com.baomidou.mybatisplus.extension.plugins.tenant.TenantHandler;
-import com.baomidou.mybatisplus.extension.plugins.tenant.TenantSqlParser;
-import net.sf.jsqlparser.expression.Expression;
-import net.sf.jsqlparser.expression.LongValue;
 import org.mybatis.spring.annotation.MapperScan;
 import org.mybatis.spring.mapper.MapperScannerConfigurer;
 import org.springframework.context.annotation.Bean;
@@ -81,6 +77,5 @@ public class MybatisPlusConfiguration {
 		scannerConfigurer.setBasePackage("com.baomidou.springboot.mapper*");
 		return scannerConfigurer;
 	}
-
 
 }

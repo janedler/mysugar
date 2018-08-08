@@ -9,10 +9,9 @@ import com.baomidou.mybatisplus.extension.service.IService;
  * </p>
  *
  * @author Janedler
- * @since 2018-07-13
+ * @since 2018-07-26
  */
 public interface TUserService extends IService<TUser> {
-
 
     /**
      * 根据用户名获取用户信息

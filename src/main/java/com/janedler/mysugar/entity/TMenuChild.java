@@ -15,16 +15,16 @@ import java.io.Serializable;
  * @author Janedler
  * @since 2018-07-26
  */
-@TableName("t_user")
-public class TUser extends Model<TUser> {
+@TableName("t_menu_child")
+public class TMenuChild extends Model<TMenuChild> {
 
     private static final long serialVersionUID = 1L;
 
     @TableId(value = "id", type = IdType.AUTO)
     private Integer id;
-    private String userName;
-    private String password;
-    private String permission;
+    private Integer menuId;
+    private String menuName;
+    private String routUrl;
 
 
     public Integer getId() {
@@ -35,28 +35,28 @@ public class TUser extends Model<TUser> {
         this.id = id;
     }
 
-    public String getUserName() {
-        return userName;
+    public Integer getMenuId() {
+        return menuId;
     }
 
-    public void setUserName(String userName) {
-        this.userName = userName;
+    public void setMenuId(Integer menuId) {
+        this.menuId = menuId;
     }
 
-    public String getPassword() {
-        return password;
+    public String getMenuName() {
+        return menuName;
     }
 
-    public void setPassword(String password) {
-        this.password = password;
+    public void setMenuName(String menuName) {
+        this.menuName = menuName;
     }
 
-    public String getPermission() {
-        return permission;
+    public String getRoutUrl() {
+        return routUrl;
     }
 
-    public void setPermission(String permission) {
-        this.permission = permission;
+    public void setRoutUrl(String routUrl) {
+        this.routUrl = routUrl;
     }
 
     @Override
@@ -66,11 +66,11 @@ public class TUser extends Model<TUser> {
 
     @Override
     public String toString() {
-        return "TUser{" +
+        return "TMenuChild{" +
         "id=" + id +
-        ", userName=" + userName +
-        ", password=" + password +
-        ", permission=" + permission +
+        ", menuId=" + menuId +
+        ", menuName=" + menuName +
+        ", routUrl=" + routUrl +
         "}";
     }
 }

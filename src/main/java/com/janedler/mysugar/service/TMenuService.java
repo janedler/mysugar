@@ -1,6 +1,6 @@
 package com.janedler.mysugar.service;
 
-import com.janedler.mysugar.entity.TUser;
+import com.janedler.mysugar.entity.TMenu;
 import com.baomidou.mybatisplus.extension.service.IService;
 
 /**
@@ -11,6 +11,6 @@ import com.baomidou.mybatisplus.extension.service.IService;
  * @author Janedler
  * @since 2018-07-26
  */
-public interface TUserService extends IService<TUser> {
+public interface TMenuService extends IService<TMenu> {
 
 }

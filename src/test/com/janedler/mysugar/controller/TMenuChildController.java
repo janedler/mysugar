@@ -14,8 +14,8 @@ import org.springframework.stereotype.Controller;
  * @since 2018-07-26
  */
 @Controller
-@RequestMapping("/tUser")
-public class TUserController {
+@RequestMapping("/tMenuChild")
+public class TMenuChildController {
 
 }
 

@@ -1,6 +1,6 @@
 package com.janedler.mysugar.mapper;
 
-import com.janedler.mysugar.entity.TUser;
+import com.janedler.mysugar.entity.TMenuChild;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 
 /**
@@ -11,6 +11,6 @@ import com.baomidou.mybatisplus.core.mapper.BaseMapper;
  * @author Janedler
  * @since 2018-07-26
  */
-public interface TUserMapper extends BaseMapper<TUser> {
+public interface TMenuChildMapper extends BaseMapper<TMenuChild> {
 
 }

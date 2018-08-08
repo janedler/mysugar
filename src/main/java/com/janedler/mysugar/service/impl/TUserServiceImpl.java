@@ -13,7 +13,7 @@ import org.springframework.stereotype.Service;
  * </p>
  *
  * @author Janedler
- * @since 2018-07-13
+ * @since 2018-07-26
  */
 @Service
 public class TUserServiceImpl extends ServiceImpl<TUserMapper, TUser> implements TUserService {
@@ -30,4 +30,5 @@ public class TUserServiceImpl extends ServiceImpl<TUserMapper, TUser> implements
     public TUser getUserByUserNameAndPassword(String username, String password) {
         return userMapper.getUserByUserNameAndPassword(username, password);
     }
+
 }

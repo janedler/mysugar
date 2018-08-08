@@ -41,9 +41,6 @@ public class ShiroConfiguration {
      */
     @Bean
     public ShiroFilterFactoryBean getShiroFilterFactoryBean(SecurityManager securityManager) {
-
-        logger.info("shiroFilter");
-
         ShiroFilterFactoryBean factoryBean = new ShiroFilterFactoryBean();
         factoryBean.setSecurityManager(securityManager);
         //Add.4.2.start
@@ -68,11 +65,7 @@ public class ShiroConfiguration {
      */
     @Bean
     public DefaultWebSecurityManager getDefaultWebSecurityManager() {
-
-        logger.info("securityManager");
-
         DefaultWebSecurityManager securityManager = new DefaultWebSecurityManager();
-
         //Add.2.2
         securityManager.setSubjectFactory(subjectFactory());
         //Add.2.5
@@ -99,7 +92,6 @@ public class ShiroConfiguration {
      */
     @Bean
     public DefaultWebSubjectFactory subjectFactory() {
-        logger.info("subjectFactory");
         return new StatelessDefaultSubjectFactory();
     }
 
@@ -127,7 +119,6 @@ public class ShiroConfiguration {
      */
     @Bean
     public StatelessAuthorizingRealm statelessRealm() {
-        logger.info("statelessRealm");
         return new StatelessAuthorizingRealm();
     }
 
@@ -140,7 +131,6 @@ public class ShiroConfiguration {
      */
     @Bean
     public StatelessAccessControlFilter statelessAuthcFilter() {
-        logger.info("statelessAuthcFilter");
         return new StatelessAccessControlFilter();
     }
 

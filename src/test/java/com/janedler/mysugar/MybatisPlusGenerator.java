@@ -61,7 +61,7 @@ public class MybatisPlusGenerator {
 		dsc.setDriverName("com.mysql.jdbc.Driver");
 		dsc.setUsername("root");
 		dsc.setPassword("root");
-		dsc.setUrl("jdbc:mysql://127.0.0.1:3306/lijian?useUnicode=true&characterEncoding=UTF-8&autoReconnect=true");
+		dsc.setUrl("jdbc:mysql://127.0.0.1:3306/lycms?useUnicode=true&characterEncoding=UTF-8&autoReconnect=true");
 		mpg.setDataSource(dsc);
 
 		// 策略配置

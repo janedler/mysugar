@@ -28,20 +28,24 @@ configurations {
 	providedRuntime
 }
 
+
+
 dependencies {
 	compile('org.springframework.boot:spring-boot-starter-web')
 	providedRuntime('org.springframework.boot:spring-boot-starter-tomcat')
 	testCompile('org.springframework.boot:spring-boot-starter-test')
 	compile 'org.springframework.boot:spring-boot-starter-actuator'
 	//druid链接池
-	compile 'com.alibaba:druid:1.0.29'
+	compile 'com.alibaba:druid:1.1.10'
+	compile 'com.alibaba:druid-spring-boot-starter:1.1.10'
 	compile 'com.alibaba:fastjson:1.2.24'
 	compile 'mysql:mysql-connector-java:5.1.39'
 	compile group: 'log4j', name: 'log4j', version: '1.2.17'
 	//Mybatis-Plus
-	compile group: 'com.baomidou', name: 'mybatis-plus-boot-starter', version: '3.0-beta'
+	compile group: 'org.springframework.boot', name: 'spring-boot-starter-jdbc', version: '2.0.4.RELEASE'
+	compile 'com.baomidou:mybatis-plus:2.1.8'
 	testCompile 'org.apache.velocity:velocity:1.7'//velocity模板，用于Mybatis-Plus自动生成代码
-	compile group: 'com.baomidou', name: 'mybatisplus-spring-boot-starter', version: '1.0.5'
+	compile group: 'com.baomidou', name: 'mybatisplus-spring-boot-starter', version: '1.0.4'
 	//redis
 	compile group: 'org.springframework.boot', name: 'spring-boot-starter-data-redis'
 	compile group: 'redis.clients', name: 'jedis', version: '2.9.0'
@@ -53,5 +57,9 @@ dependencies {
 	//swagger
 	compile 'io.springfox:springfox-swagger2:2.2.2'
 	compile 'io.springfox:springfox-swagger-ui:2.2.2'
+	//lombok插件依赖
+	compile 'org.projectlombok:lombok:1.16.14'
+
+
 
 }

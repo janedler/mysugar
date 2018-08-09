@@ -2,14 +2,14 @@ package com.janedler.mysugar.controller;
 
 
 import com.alibaba.fastjson.JSONObject;
+import com.janedler.mysugar.db.entity.TUser;
+import com.janedler.mysugar.db.service.db1.TUserService;
 import com.janedler.mysugar.domain.entity.UserRealNameAuth;
 import com.janedler.mysugar.domain.request.LoginReq;
 import com.janedler.mysugar.domain.response.LoginResp;
 import com.janedler.mysugar.domain.response.ResultResp;
 import com.janedler.mysugar.domain.response.UserRealNameAuthResp;
-import com.janedler.mysugar.entity.TUser;
 import com.janedler.mysugar.exception.CommonException;
-import com.janedler.mysugar.service.TUserService;
 import com.janedler.mysugar.shiro.bean.ShiroUser;
 import com.janedler.mysugar.utils.JsonWebTokenUtil;
 import com.janedler.mysugar.utils.RedisUtil;
@@ -50,6 +50,9 @@ public class AuthController {
         if (ValidateUtil.isNullOrEmpty(userNameRep) || ValidateUtil.isNullOrEmpty(passwordRep)) {
             throw new CommonException(600, "用户名或者密码为空");
         }
+
+
+
         String password = SecurityUtil.decodePassword(passwordRep, jwtKey);
         TUser dbUser = userService.getUserByUserNameAndPassword(userNameRep,password);
         if (dbUser == null){

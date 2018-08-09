@@ -1,7 +1,7 @@
 package com.janedler.mysugar.utils;
 
+import com.janedler.mysugar.db.entity.TUser;
 import com.janedler.mysugar.shiro.bean.ShiroUser;
-import com.janedler.mysugar.entity.TUser;
 import org.apache.shiro.subject.Subject;
 
 /**

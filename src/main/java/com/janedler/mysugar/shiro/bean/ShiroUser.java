@@ -3,11 +3,10 @@
  */
 package com.janedler.mysugar.shiro.bean;
 
-import com.janedler.mysugar.entity.TUser;
+
+import com.janedler.mysugar.db.entity.TUser;
 
 import java.io.Serializable;
-import java.util.HashMap;
-import java.util.Map;
 
 /**
  * 自定义Authentication对象，使得Subject除了携带用户的登录名外还可以携带更多信息.

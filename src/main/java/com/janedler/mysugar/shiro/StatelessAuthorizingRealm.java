@@ -2,10 +2,10 @@ package com.janedler.mysugar.shiro;
 
 
 import com.alibaba.fastjson.JSONObject;
+import com.janedler.mysugar.db.entity.TUser;
+import com.janedler.mysugar.db.service.db1.TUserService;
 import com.janedler.mysugar.shiro.bean.Role;
 import com.janedler.mysugar.shiro.bean.ShiroUser;
-import com.janedler.mysugar.entity.TUser;
-import com.janedler.mysugar.service.TUserService;
 import com.janedler.mysugar.utils.*;
 import io.jsonwebtoken.Claims;
 import org.apache.log4j.Logger;

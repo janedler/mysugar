@@ -4,7 +4,6 @@ package com.janedler.mysugar.config;
 import com.janedler.mysugar.shiro.StatelessAccessControlFilter;
 import com.janedler.mysugar.shiro.StatelessAuthorizingRealm;
 import com.janedler.mysugar.shiro.StatelessDefaultSubjectFactory;
-import com.janedler.mysugar.utils.Base64Util;
 import org.apache.log4j.Logger;
 import org.apache.shiro.mgt.DefaultSessionStorageEvaluator;
 import org.apache.shiro.mgt.DefaultSubjectDAO;
@@ -14,6 +13,8 @@ import org.apache.shiro.spring.security.interceptor.AuthorizationAttributeSource
 import org.apache.shiro.spring.web.ShiroFilterFactoryBean;
 import org.apache.shiro.web.mgt.DefaultWebSecurityManager;
 import org.apache.shiro.web.mgt.DefaultWebSubjectFactory;
+import org.apache.shiro.web.mgt.WebSecurityManager;
+import org.apache.shiro.web.session.mgt.WebSessionManager;
 import org.springframework.aop.framework.autoproxy.DefaultAdvisorAutoProxyCreator;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -64,7 +65,7 @@ public class ShiroConfiguration {
      * @return
      */
     @Bean
-    public DefaultWebSecurityManager getDefaultWebSecurityManager() {
+    public WebSecurityManager getDefaultWebSecurityManager() {
         DefaultWebSecurityManager securityManager = new DefaultWebSecurityManager();
         //Add.2.2
         securityManager.setSubjectFactory(subjectFactory());
